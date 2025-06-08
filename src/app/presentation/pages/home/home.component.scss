@@ -1,0 +1,36 @@
+.toolbar {
+  background: #0fabb6;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 16px;
+}
+
+.app-title {
+  font-weight: bold;
+  font-size: 24px;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.content-container {
+  padding: 24px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.breed-select {
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+.mat-mdc-button {
+  margin-right: 10px;
+}
+
+@media (max-width: 600px) {
+  .toolbar .app-title {
+    font-size: 18px;
+  }
+}

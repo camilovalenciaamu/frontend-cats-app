@@ -1,0 +1,38 @@
+<mat-toolbar color="primary" class="mat-elevation-z6 toolbar">
+  <span class="app-title">Cat App</span>
+  <span class="spacer"></span>
+  <ng-container *ngIf="!isMobile">
+    <button mat-button routerLink="/login">Iniciar Sesion</button>
+    <button mat-raised-button color="accent" routerLink="/register">
+      Registrarse
+    </button>
+  </ng-container>
+  <ng-container *ngIf="isMobile">
+    <button mat-icon-button [matMenuTriggerFor]="menu">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item routerLink="/login" style="margin-right: 10px">
+        Iniciar Sesion
+      </button>
+      <button mat-menu-item routerLink="/register">Registrarse</button>
+    </mat-menu>
+  </ng-container>
+</mat-toolbar>
+
+<div class="content-container">
+  <mat-form-field appearance="fill" class="breed-select">
+    <mat-label>Selecciona una raza</mat-label>
+    <mat-select [(value)]="selectedBreed">
+      <mat-option *ngFor="let breed of breeds" [value]="breed">
+        {{ breed.name }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <app-breed-carousel
+    *ngIf="selectedBreed"
+    [breed]="selectedBreed"
+  ></app-breed-carousel>
+</div>
+<br /><br /><br /><br />

@@ -1,0 +1,32 @@
+<div *ngIf="breed" class="carousel-container">
+  <mat-card class="breed-card">
+    <mat-card-actions class="carousel-controls" *ngIf="images.length > 1">
+      <button mat-icon-button (click)="prev()" color="primary">
+        <mat-icon>chevron_left</mat-icon>
+      </button>
+      <span>{{ current + 1 }} / {{ images.length }}</span>
+      <button mat-icon-button (click)="next()" color="primary">
+        <mat-icon>chevron_right</mat-icon>
+      </button>
+    </mat-card-actions>
+    <mat-card-header>
+      <mat-card-title>{{ breed.name }}</mat-card-title>
+      <mat-card-subtitle>{{ breed.origin }}</mat-card-subtitle>
+    </mat-card-header>
+    <img
+      mat-card-image
+      [src]="images[current]"
+      alt="{{ breed.name }}"
+      (error)="imageError = true"
+      *ngIf="images.length && !imageError"
+    />
+    <div *ngIf="imageError" class="fallback-image">
+      <mat-icon>image_not_supported</mat-icon>
+    </div>
+    <mat-card-content>
+      <p>{{ breed.description }}</p>
+      <p><strong>Temperamento:</strong> {{ breed.temperament }}</p>
+      <p><strong>Esperanza de vida:</strong> {{ breed.life_span }} años</p>
+    </mat-card-content>
+  </mat-card>
+</div>

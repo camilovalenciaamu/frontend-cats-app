@@ -1,0 +1,26 @@
+.selector-field {
+  width: 100%;
+  margin: 20px auto;
+  display: block;
+
+  mat-form-field {
+    background-color: #fafafa;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  }
+
+  mat-label {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #555;
+  }
+
+  mat-option {
+    font-size: 1rem;
+    padding: 10px;
+  }
+
+  .mat-select-value {
+    font-weight: 500;
+  }
+}

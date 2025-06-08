@@ -1,0 +1,13 @@
+<mat-form-field appearance="outline" class="selector-field">
+  <mat-label>Seleccione una raza de gato</mat-label>
+  <mat-select
+    [(ngModel)]="selectedId"
+    (selectionChange)="onSelect()"
+    disableRipple
+  >
+    <mat-option value="" disabled>-- Elija una opción --</mat-option>
+    <mat-option *ngFor="let breed of breeds" [value]="breed.id">
+      🐱 {{ breed.name }}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
